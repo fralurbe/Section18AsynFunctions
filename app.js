@@ -1,6 +1,16 @@
+// async function getPlanets() {
+//     const res = await axios.get('https://swapi.dev/api/planets/');
+//     console.log(res.data)
+// }
+
 async function getPlanets() {
-    const res = await axios.get('https://swapi.dev/api/planets/');
-    console.log(res.data)
+    try {
+        const res = await axios.get('https://swapi.dev/api/planets/1111');
+        console.log(res.data)
+    }
+    catch(e){
+        console.log('catch:', e )
+    }
 }
 
 
