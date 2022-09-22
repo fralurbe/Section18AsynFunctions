@@ -8,13 +8,20 @@ changeBodyColor = (color) => {
 }
 
 async function lightShow(){
-    const q = changeBodyColor('red');
-    const w = changeBodyColor('blue');
-    const e = changeBodyColor('yellow');
-    await q;
-    await w;
-    await e;
+    //secuencial
+    await changeBodyColor('red');
+    await changeBodyColor('blue');
+    await changeBodyColor('yellow');
+
+    //pararelo
+    // const q = changeBodyColor('red');
+    // const w = changeBodyColor('blue');
+    // const e = changeBodyColor('yellow');
+    // const colorChanges = await PromiseAll([q,w,e]);
+    // colorChanges();
 }
+
+lightShow();
 
 
 //esto funciona de manera secuencial, hasta que no termina una llamada no se hace la siguiente 
@@ -34,14 +41,23 @@ async function lightShow(){
 //     const promise2 = axios.get('https://pokeapi.co/api/v2/pokemon/2');    
 //     const promise3 = axios.get('https://pokeapi.co/api/v2/pokemon/3'); 
 
-//     const poke1 = await promise1;
-//     const poke2 = await promise2;
-//     const poke3 = await promise3;
-
-//     console.log(poke1.data.name);
-//     console.log(poke2.data.name);
-//     console.log(poke3.data.name);
+    // const poke1 = await promise1;
+    // const poke2 = await promise2;
+    // const poke3 = await promise3;
+    // console.log(poke1.data.name);
+    // console.log(poke2.data.name);
+    // console.log(poke3.data.name);
+//     const results = await Promise.all([promise1, promise2, promise3]);
+//     printResults(results);
 // }
+
+// function printResults(data){
+//     console.log(data);
+//     for (let pokemon of data){
+//         console.log(pokemon.data.name);
+//     }
+// }
+
 // get3PkemonParalelo();
 
 
